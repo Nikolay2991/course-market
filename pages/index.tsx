@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Button, Htag } from '../components';
+import { Button, Htag, Ptag, Tag } from '../components';
 
 export default function Home() {
   return (
@@ -13,8 +13,13 @@ export default function Home() {
       </Head>
       <div>
         <Htag tag='h1'>Home</Htag>
-        <Button appearance='primary'>Button</Button>
-        <Button appearance='ghost'>Button</Button>
+        <Button appearance='primary' arrow='right'>Button</Button>
+        <Button appearance='ghost' arrow='down'>Button</Button>
+        <Ptag size='m'>Привет</Ptag>
+        <Tag size='m' color='primary' href='/'>123123</Tag>
+        <Tag size='m' color='ghost' href='/'>123123</Tag>
+        <Tag size='m' color='red' href='/'>123123</Tag>
+        <Tag size='m' color='green' href='/'>123123</Tag>
       </div>
     </>
   )
