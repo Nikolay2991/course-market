@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import Image from 'next/image'
+import { Button, Htag } from '../components';
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
         <title>MyTop - наш лучший топ</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -11,9 +11,11 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body>
-        Home
-      </body>
-    </div>
+      <div>
+        <Htag tag='h1'>Home</Htag>
+        <Button appearance='primary'>Button</Button>
+        <Button appearance='ghost'>Button</Button>
+      </div>
+    </>
   )
 }
