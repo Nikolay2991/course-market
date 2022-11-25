@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import Head from 'next/head'
-import { Button, Htag, Ptag, Tag } from '../components';
+import { Button, Htag, Ptag, Tag, Rating } from '../components';
 
 export default function Home() {
+
+  const [rating, setRating] = useState(4);
+
   return (
     <>
       <Head>
@@ -20,6 +24,7 @@ export default function Home() {
         <Tag size='m' color='ghost' href='/'>123123</Tag>
         <Tag size='m' color='red' href='/'>123123</Tag>
         <Tag size='m' color='green' href='/'>123123</Tag>
+        <Rating rating={rating} isEditable setRating={setRating} />
       </div>
     </>
   )
