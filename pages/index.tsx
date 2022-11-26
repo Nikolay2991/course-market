@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import Head from 'next/head'
-import { Button, Htag, Ptag, Tag, Rating } from '../components';
+import { type FC, useState } from "react";
+import Head from "next/head";
+import { Button, Htag, Ptag, Tag, Rating } from "../components";
+import { withLayout } from "../layout";
 
-export default function Home() {
+const Home:FC = () => {
 
   const [rating, setRating] = useState(4);
 
@@ -15,7 +16,7 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
+      <>
         <Htag tag='h1'>Home</Htag>
         <Button appearance='primary' arrow='right'>Button</Button>
         <Button appearance='ghost' arrow='down'>Button</Button>
@@ -25,7 +26,9 @@ export default function Home() {
         <Tag size='m' color='red' href='/'>123123</Tag>
         <Tag size='m' color='green' href='/'>123123</Tag>
         <Rating rating={rating} isEditable setRating={setRating} />
-      </div>
+      </>
     </>
-  )
-}
+  );
+};
+
+export default withLayout(Home);

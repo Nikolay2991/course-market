@@ -41,14 +41,15 @@ export const Rating = ({ isEditable = false, rating, setRating, ...props }: Rati
           [styles.filled]: index < currentRating,
           [styles.editable]: isEditable,
           })}
-          key={index}>
-        <StarIcon
-          onMouseEnter={changeDisplay.bind(null, index + 1)}
-          onMouseLeave={changeDisplay.bind(null, rating)}
-          onClick={handleRating.bind(null, index + 1)}
-          tabIndex={isEditable ? 0 : -1}
-          onKeyDown={(e: KeyboardEvent<SVGAElement>) => isEditable && handleRatingSpace(index + 1, e)}
-        />
+          key={index}
+        >
+          <StarIcon
+            onMouseEnter={changeDisplay.bind(null, index + 1)}
+            onMouseLeave={changeDisplay.bind(null, rating)}
+            onClick={handleRating.bind(null, index + 1)}
+            tabIndex={isEditable ? 0 : -1}
+            onKeyDown={(e: KeyboardEvent<SVGAElement>) => isEditable && handleRatingSpace(index + 1, e)}
+          />
         </span>
 
       ) 
