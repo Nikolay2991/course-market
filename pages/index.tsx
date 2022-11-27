@@ -15,7 +15,7 @@ interface HomeProps extends Record<string, unknown> {
 const Home = ({ menu, firstCategory }: HomeProps): JSX.Element => {
   const [rating, setRating] = useState(4);
 
-  console.log(menu)
+  console.log(menu);
   return (
     <>
       <Htag tag='h1'>Home</Htag>
