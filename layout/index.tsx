@@ -6,23 +6,21 @@ import {
   Sidebar,
 } from "./components";
 import cn from "classnames";
-import styles from "./Ptag.module.css";
+import styles from "./Layout.module.css";
 
 const Layout = ({children }: LayoutProps): JSX.Element => {
   return (
-    <>
-      <Header />
+    <div className={styles.wrapper}>
+      <Header className={styles.header} />
+
+      <Sidebar className={styles.sidebar} />
 
       <div>
-        <Sidebar />
-
-        <div>
-          {children}
-        </div>
+        {children}
       </div>
-      
-      <Footer />
-    </>
+
+      <Footer className={styles.footer} />
+    </div>
   );
 };
 
