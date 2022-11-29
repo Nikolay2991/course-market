@@ -1,4 +1,5 @@
 import { type FC } from "react";
+import { AppContextProvider, IAppContext } from "../context/app.context";
 import { LayoutProps } from "./Layout.props";
 import {
   Header,
@@ -25,12 +26,15 @@ const Layout = ({children }: LayoutProps): JSX.Element => {
   );
 };
 
-export const withLayout = <T extends Record<string, unknown>>(Component: FC<T>) => {
+export const withLayout = <T extends Record<string, unknown> & IAppContext>(Component: FC<T>) => {
   return function withLayoutComponent(props: T): JSX.Element {
     return (
-      <Layout>
-        <Component {...props} />
-      </Layout>
+      <AppContextProvider menu={props.menu} firstCategory={props.firstCategory}>
+        <Layout>
+          <Component {...props} />
+        </Layout>
+      </AppContextProvider>
+
     );
   };
 };
