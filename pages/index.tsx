@@ -15,7 +15,6 @@ interface HomeProps extends Record<string, unknown> {
 const Home = ({ menu, firstCategory }: HomeProps): JSX.Element => {
   const [rating, setRating] = useState(4);
 
-  console.log(menu);
   return (
     <>
       <Htag tag='h1'>Home</Htag>
@@ -27,13 +26,6 @@ const Home = ({ menu, firstCategory }: HomeProps): JSX.Element => {
       <Tag size='m' color='red' href='/'>123123</Tag>
       <Tag size='m' color='green' href='/'>123123</Tag>
       <Rating rating={rating} isEditable setRating={setRating} />
-      <ul>
-        {menu.map(m => (
-          <li key={m._id.secondCategory}>
-            {m._id.secondCategory}
-          </li>
-        ))}
-      </ul>
     </>
   );
 };
