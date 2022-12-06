@@ -1,8 +1,10 @@
-import {memo} from "react";
-import { SidebarProps } from "./Sidebar.props";
-import cn from "classnames";
-import styles from "./Sidebar.module.css";
-import { Menu } from "../index";
+import { memo } from 'react';
+import cn from 'classnames';
+
+import { Menu } from '../index';
+
+import { SidebarProps } from './Sidebar.props';
+import styles from './Sidebar.module.css';
 
 const Sidebar = ({ ...props }: SidebarProps): JSX.Element => {
   return (
