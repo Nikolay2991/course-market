@@ -1,6 +1,8 @@
 import {memo} from 'react';
-import {TagProps} from './Tag.props';
+
 import cn from 'classnames';
+
+import {TagProps} from './Tag.props';
 import styles from './Tag.module.css';
 
 export const Tag = ({
@@ -23,5 +25,5 @@ export const Tag = ({
     >
       {href ? <a href={href}>{children}</a> : {children}}
     </div>
-  )
+  );
 };

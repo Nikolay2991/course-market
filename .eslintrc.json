@@ -1,7 +1,19 @@
 {
   "rules": {
     "semi": ["error", "always"],
-    "quotes": ["error", "double"]
+    "quotes": ["warn", "single"],
+    "jsx-quotes": ["warn", "prefer-double"],
+    "no-console": "warn",
+    "indent": ["warn", 2],
+    "max-len": ["warn", {"code": 120}],
+    "import/order": ["warn", {
+      "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
+      "newlines-between": "always-and-inside-groups"
+      }]
   },
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "next/core-web-vitals"
+  ]
 }

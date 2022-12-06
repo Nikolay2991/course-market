@@ -1,7 +1,9 @@
 import { KeyboardEvent, useEffect, useState } from 'react';
+
+import cn from 'classnames';
+
 import { RatingProps } from './Rating.props';
 import StarIcon from './Star.svg';
-import cn from 'classnames';
 import styles from './Rating.module.css';
 
 export const Rating = ({ isEditable = false, rating, setRating, ...props }: RatingProps): JSX.Element => {
@@ -16,30 +18,30 @@ export const Rating = ({ isEditable = false, rating, setRating, ...props }: Rati
     if (!isEditable) {
       return;
     }
-    constructRating(data)
-  }
+    constructRating(data);
+  };
 
   const handleRating = (data: number) => {
     if (!isEditable || !setRating) {
       return;
     }
-    setRating(data)
-  }
+    setRating(data);
+  };
 
   const handleRatingSpace = (data: number, e: KeyboardEvent<SVGAElement>) => {
     if (e.code != 'Space' || !setRating) {
       return;
     }
-    setRating(data)
-  }
+    setRating(data);
+  };
 
   const constructRating = (currentRating: number) => {
     const updatedArray = ratingArray.map((item: JSX.Element, index: number) => {
       return (
         <span
           className={cn(styles.star, {
-          [styles.filled]: index < currentRating,
-          [styles.editable]: isEditable,
+            [styles.filled]: index < currentRating,
+            [styles.editable]: isEditable,
           })}
           key={index}
         >
@@ -52,8 +54,8 @@ export const Rating = ({ isEditable = false, rating, setRating, ...props }: Rati
           />
         </span>
 
-      ) 
-    })
+      ); 
+    });
     setRatingArray(updatedArray);
   };
 
@@ -61,5 +63,5 @@ export const Rating = ({ isEditable = false, rating, setRating, ...props }: Rati
     <div className={styles.ratingBlock} {...props}>
       {ratingArray.map((item, index) => item)}
     </div>
-  )
+  );
 };
